@@ -1,5 +1,6 @@
 import React from 'react'
 import ListItem from './ListItem'
+import '../styles/List'
 
 const List = props => {
   let items = props.items.map((item, i) => {
