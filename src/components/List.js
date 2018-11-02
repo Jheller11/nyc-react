@@ -5,6 +5,7 @@ const List = props => {
   let items = props.items.map((item, i) => {
     return <ListItem key={i} data={item} />
   })
+  console.log(items)
   return <div>{items}</div>
 }
 

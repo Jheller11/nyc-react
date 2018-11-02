@@ -6,10 +6,10 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      items: ['']
+      items: []
     }
   }
-
+  // fetch all items.
   componentDidMount() {
     axios
       .get('http://localhost:3001/items')
