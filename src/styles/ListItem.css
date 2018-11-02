@@ -1,0 +1,28 @@
+.list-item {
+  width: 95%;
+  padding: 10px;
+  background-color: rgb(0, 20, 20);
+  margin: 0.5em 0;
+}
+
+.complete {
+  border: 1px solid blue;
+  color: grey;
+  box-shadow: 1px 1px 5px blue;
+}
+
+.incomplete {
+  border: 1px solid green;
+  color: lightgrey;
+  box-shadow: 1px 1px 5px green;
+}
+
+.complete:hover {
+  box-shadow: 3px 3px 5px blue;
+  transform: translateX(-2px) translateY(-2px);
+}
+
+.incomplete:hover {
+  box-shadow: 3px 3px 5px green;
+  transform: translateX(-2px) translateY(-2px);
+}
