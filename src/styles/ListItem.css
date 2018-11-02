@@ -5,6 +5,12 @@
   margin: 0.5em 0;
 }
 
+.top-row {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  margin-bottom: 1em;
+}
+
 .complete {
   border: 1px solid blue;
   color: grey;
@@ -25,4 +31,26 @@
 .incomplete:hover {
   box-shadow: 3px 3px 5px green;
   transform: translateX(-2px) translateY(-2px);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons > * {
+  color: white;
+  min-width: 3em;
+  background-color: grey;
+  border: 1px solid white;
+  padding: 5px;
+}
+
+.buttons > *:hover {
+  transform: translateY(-2px);
+  color: red;
 }
