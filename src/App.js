@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Route, Switch } from 'react-router-dom'
 import List from './components/List'
+import NoMatch from './components/NoMatch'
 import axios from 'axios'
 
 class App extends Component {
@@ -27,7 +29,16 @@ class App extends Component {
     return (
       <div className="App">
         <h1>React</h1>
-        <List items={this.state.items} />
+        <Switch>
+          <Route path="/users/login" component={NoMatch} />
+          <Route path="/users/signup" component={NoMatch} />
+          <Route
+            exact
+            path="/"
+            render={props => <List {...props} items={this.state.items} />}
+          />
+          <Route path="*" component={NoMatch} />
+        </Switch>
       </div>
     )
   }
