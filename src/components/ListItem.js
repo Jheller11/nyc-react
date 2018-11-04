@@ -22,13 +22,16 @@ const ListItem = props => {
           <i className="fa fa-heart-o fa-lg" /> {props.data.likes.length}
         </button>
         <button>
-          <i className="fa fa-map-marker fa-lg" />
+          <i className="fa fa-map-marker fa-lg" /> Map
         </button>
         <button>
-          <i className="fa fa-pencil-square-o fa-lg" />
+          <i className="fa fa-check fa-lg" /> Change Status
         </button>
         <button>
-          <i className="fa fa-trash-o fa-lg" />
+          <i className="fa fa-pencil-square-o fa-lg" /> Edit
+        </button>
+        <button>
+          <i className="fa fa-trash-o fa-lg" /> Delete
         </button>
       </div>
     </div>

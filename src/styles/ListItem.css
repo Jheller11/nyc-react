@@ -1,7 +1,7 @@
 .list-item {
   width: 95%;
   padding: 10px;
-  background-color: rgb(0, 20, 20);
+
   margin: 0.5em 0;
 }
 
@@ -15,12 +15,14 @@
   border: 1px solid blue;
   color: grey;
   box-shadow: 1px 1px 5px blue;
+  background-color: rgb(0, 10, 20);
 }
 
 .incomplete {
   border: 1px solid green;
   color: lightgrey;
   box-shadow: 1px 1px 5px green;
+  background-color: rgb(0, 20, 10);
 }
 
 .complete:hover {
@@ -48,9 +50,13 @@ a {
   background-color: grey;
   border: 1px solid white;
   padding: 5px;
+  cursor: pointer;
 }
 
 .buttons > *:hover {
-  transform: translateY(-2px);
-  color: red;
+  color: purple;
+}
+
+.buttons > *:active {
+  transform: translateY(2px);
 }
