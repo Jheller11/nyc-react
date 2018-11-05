@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ListItem from './ListItem'
+import ListController from './ListController'
 import '../styles/List.css'
 
 class List extends Component {
@@ -42,7 +43,12 @@ class List extends Component {
       }
     }
 
-    return <div className="list">{list()}</div>
+    return (
+      <div className="list-container">
+        <ListController />
+        <div className="list">{list()}</div>
+      </div>
+    )
   }
 }
 
