@@ -6,6 +6,12 @@ const ListItem = props => {
     ? 'complete list-item'
     : 'incomplete list-item'
   let d = new Date(props.data.createdAt)
+  let icons = {
+    restaurant: 'fa fa-cutlery',
+    park: 'fa fa-tree',
+    show: 'fa fa-ticket',
+    activity: 'fa fa-soccer-ball-o'
+  }
   return (
     <div className={status}>
       <div className="top-row">
@@ -16,6 +22,9 @@ const ListItem = props => {
         </div>
         <div>{props.data.addedBy}</div>
         <div>{props.data.location}</div>
+        <div>
+          <i className={icons[props.data.type]} />
+        </div>
       </div>
       <div className="buttons">
         <button>

@@ -13,7 +13,8 @@ class App extends Component {
     super()
     this.state = {
       items: [],
-      error: ''
+      error: '',
+      isLoggedIn: false
     }
 
     this.setError = this.setError.bind(this)
@@ -42,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header isLoggedIn={this.state.isLoggedIn} />
         <Switch>
           <Route
             path="/users/login"

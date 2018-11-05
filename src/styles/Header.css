@@ -1,0 +1,19 @@
+header {
+  border-bottom: 1px solid gray;
+  padding: 0 1em;
+}
+
+nav {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+nav > a:hover {
+  text-decoration: underline gold;
+}
+
+nav > a {
+  padding: 1px 4px;
+}
