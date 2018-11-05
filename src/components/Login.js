@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Input from './Input'
 import axios from 'axios'
 
 class Login extends Component {
@@ -31,7 +32,11 @@ class Login extends Component {
   }
 
   render() {
-    return <div />
+    return (
+      <div>
+        <form>1</form>
+      </div>
+    )
   }
 }
 

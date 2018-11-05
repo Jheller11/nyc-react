@@ -10,8 +10,11 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      items: []
+      items: [],
+      error: ''
     }
+
+    this.setError = this.setError.bind(this)
   }
   // fetch all items.
   componentDidMount() {
@@ -27,13 +30,38 @@ class App extends Component {
       })
   }
 
+  // set login or signup error
+  setError(err) {
+    this.setState({
+      error: err
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>React</h1>
         <Switch>
-          <Route path="/users/login" component={Login} />
-          <Route path="/users/signup" component={Signup} />
+          <Route
+            path="/users/login"
+            render={props => (
+              <Login
+                {...props}
+                message={this.state.error}
+                setError={this.setError}
+              />
+            )}
+          />
+          <Route
+            path="/users/signup"
+            render={props => (
+              <Signup
+                {...props}
+                message={this.state.error}
+                setError={this.setError}
+              />
+            )}
+          />
           <Route
             exact
             path="/"
