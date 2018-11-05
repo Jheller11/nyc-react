@@ -4,6 +4,8 @@ import List from './components/List'
 import NoMatch from './components/NoMatch'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import Home from './components/Home'
+import Header from './components/Header'
 import axios from 'axios'
 
 class App extends Component {
@@ -40,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>React</h1>
+        <Header />
         <Switch>
           <Route
             path="/users/login"
@@ -63,10 +65,10 @@ class App extends Component {
             )}
           />
           <Route
-            exact
-            path="/"
+            path="/all"
             render={props => <List {...props} items={this.state.items} />}
           />
+          <Route exact path="/" render={props => <Home {...props} />} />
           <Route path="*" component={NoMatch} />
         </Switch>
       </div>

@@ -10,7 +10,7 @@ const ListItem = props => {
     <div className={status}>
       <div className="top-row">
         <div>
-          <a href={props.data.link} target="_blank">
+          <a href={props.data.link} target="_blank" rel="noopener noreferrer">
             {props.data.name}
           </a>
         </div>

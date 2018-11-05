@@ -52,7 +52,7 @@ class Login extends Component {
             handleChange={this.handleChange}
             type={'password'}
           />
-          <input type="submit" value="Sign up!" />
+          <input type="submit" value="Log in" />
         </form>
       </div>
     )
