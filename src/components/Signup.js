@@ -22,7 +22,12 @@ class Signup extends Component {
   handleSubmit(e) {
     e.preventDefault()
     axios
-      .post('/users/signup', this.state)
+      .post('http://localhost:3001/users/signup', {
+        email: this.state.email,
+        password: this.state.password,
+        firstname: this.state.firstname,
+        lastname: this.state.lastname
+      })
       .then(res => {
         console.log(res)
       })
@@ -32,7 +37,6 @@ class Signup extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

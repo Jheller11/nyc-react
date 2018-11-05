@@ -34,7 +34,21 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <form>1</form>
+        <form onSubmit={this.handleSubmit}>
+          <Input
+            name={'email'}
+            label={'Email'}
+            handleChange={this.handleChange}
+            type={'email'}
+          />
+          <Input
+            name={'password'}
+            label={'Password'}
+            handleChange={this.handleChange}
+            type={'password'}
+          />
+          <input type="submit" value="Sign up!" />
+        </form>
       </div>
     )
   }
