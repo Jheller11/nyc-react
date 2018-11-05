@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Input from './Input'
+import Error from './Error'
 import axios from 'axios'
 
 class Login extends Component {
@@ -22,7 +23,10 @@ class Login extends Component {
   handleSubmit(e) {
     e.preventDefault()
     axios
-      .post('/users/login', this.state)
+      .post('http://localhost:3001/users/login', {
+        email: this.state.email,
+        password: this.state.password
+      })
       .then(res => {
         console.log(res)
       })
@@ -34,6 +38,7 @@ class Login extends Component {
   render() {
     return (
       <div>
+        <Error errorMessage={this.state.error} />
         <form onSubmit={this.handleSubmit}>
           <Input
             name={'email'}

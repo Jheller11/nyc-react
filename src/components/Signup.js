@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Input from './Input'
+import Error from './Error'
 import axios from 'axios'
 
 class Signup extends Component {
@@ -39,6 +40,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
+        <Error errorMessage={this.state.error} />
         <form onSubmit={this.handleSubmit}>
           <Input
             name={'email'}
