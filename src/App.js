@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import axios from 'axios'
 
 class App extends Component {
@@ -44,34 +45,37 @@ class App extends Component {
     return (
       <div className="App">
         <Header isLoggedIn={this.state.isLoggedIn} />
-        <Switch>
-          <Route
-            path="/users/login"
-            render={props => (
-              <Login
-                {...props}
-                message={this.state.error}
-                setError={this.setError}
-              />
-            )}
-          />
-          <Route
-            path="/users/signup"
-            render={props => (
-              <Signup
-                {...props}
-                message={this.state.error}
-                setError={this.setError}
-              />
-            )}
-          />
-          <Route
-            path="/all"
-            render={props => <List {...props} items={this.state.items} />}
-          />
-          <Route exact path="/" render={props => <Home {...props} />} />
-          <Route path="*" component={NoMatch} />
-        </Switch>
+        <main>
+          <Switch>
+            <Route
+              path="/users/login"
+              render={props => (
+                <Login
+                  {...props}
+                  message={this.state.error}
+                  setError={this.setError}
+                />
+              )}
+            />
+            <Route
+              path="/users/signup"
+              render={props => (
+                <Signup
+                  {...props}
+                  message={this.state.error}
+                  setError={this.setError}
+                />
+              )}
+            />
+            <Route
+              path="/all"
+              render={props => <List {...props} items={this.state.items} />}
+            />
+            <Route exact path="/" render={props => <Home {...props} />} />
+            <Route path="*" component={NoMatch} />
+          </Switch>
+        </main>
+        <Footer />
       </div>
     )
   }
