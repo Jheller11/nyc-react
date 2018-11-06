@@ -6,7 +6,10 @@ import '../styles/NewItemForm.css'
 class NewItemForm extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      type: 'restaurant',
+      private: false
+    }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -23,9 +26,13 @@ class NewItemForm extends Component {
   handleSubmit(e) {
     e.preventDefault()
     axios
-      .post('http://localhost:3001/users/login', {
-        email: this.state.email,
-        password: this.state.password
+      .post('http://localhost:3001/items', {
+        name: this.state.name,
+        location: this.state.location,
+        link: this.state.link,
+        type: this.state.type,
+        private: this.state.private,
+        addedBy: 'Jeff'
       })
       .then(res => {
         console.log(res)
@@ -59,7 +66,7 @@ class NewItemForm extends Component {
           />
           <div className="form-group">
             <label name="type">Type:</label>
-            <select type="select">
+            <select type="select" onChange={this.handleChange}>
               <option value="restaurant">Restaurant</option>
               <option value="park">Park</option>
               <option value="show">Show</option>
@@ -68,7 +75,7 @@ class NewItemForm extends Component {
           </div>
           <div className="form-group">
             <label name="private">Public?:</label>
-            <select type="select">
+            <select type="select" onChange={this.handleChange}>
               <option value="false">Public</option>
               <option value="true">Private</option>
             </select>
