@@ -1,0 +1,35 @@
+.login-signup {
+  border: 1px solid whitesmoke;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px grey;
+  width: 50%;
+  margin: 5em auto;
+  min-width: 250px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0.2em 0;
+}
+
+.button {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  padding: 5px;
+  margin: 10px auto;
+  display: block;
+}
+
+.button:hover {
+  color: gold;
+  border-bottom: 1px solid gold;
+}
+
+.button:focus {
+  color: gold;
+  border-bottom: 1px solid gold;
+}

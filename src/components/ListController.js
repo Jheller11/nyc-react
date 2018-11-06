@@ -4,13 +4,13 @@ const ListController = props => {
   return (
     <div>
       <form>
-        <label for="view">View:</label>
+        <label htmlFor="view">View:</label>
         <select type="select">
           <option value="all">All</option>
           <option value="complete">Complete</option>
           <option value="incomplete">Not Complete</option>
         </select>
-        <label for="type">Type:</label>
+        <label htmlFor="type">Type:</label>
         <select type="select">
           <option value="all">All</option>
           <option value="restaurant">Restaurant</option>
@@ -18,7 +18,7 @@ const ListController = props => {
           <option value="show">Show</option>
           <option value="activity">Activity</option>
         </select>
-        <label for="owner">Added By:</label>
+        <label htmlFor="owner">Added By:</label>
         <select type="select">
           <option value="me">Me</option>
           <option value="others">Others</option>

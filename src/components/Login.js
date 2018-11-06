@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Input from './Input'
 import Error from './Error'
 import axios from 'axios'
+import '../styles/Login&Signup.css'
 
 class Login extends Component {
   constructor() {
@@ -37,7 +38,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="login-signup">
         <Error errorMessage={this.state.error} />
         <form onSubmit={this.handleSubmit}>
           <Input
@@ -52,7 +53,7 @@ class Login extends Component {
             handleChange={this.handleChange}
             type={'password'}
           />
-          <input type="submit" value="Log in" />
+          <input type="submit" value="Log in" className="button" />
         </form>
       </div>
     )
