@@ -41,7 +41,6 @@ class Signup extends Component {
   render() {
     return (
       <div className="login-signup">
-        <Error errorMessage={this.state.error} />
         <form onSubmit={this.handleSubmit}>
           <Input
             name={'email'}

@@ -8,6 +8,7 @@ import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import NewItemForm from './components/NewItemForm'
+import Error from './components/Error'
 import axios from 'axios'
 
 class App extends Component {
@@ -54,26 +55,15 @@ class App extends Component {
       <div className="App">
         <Header isLoggedIn={this.state.isLoggedIn} />
         <main>
+          <Error errorMessage={this.state.error} />
           <Switch>
             <Route
               path="/users/login"
-              render={props => (
-                <Login
-                  {...props}
-                  message={this.state.error}
-                  setError={this.setError}
-                />
-              )}
+              render={props => <Login {...props} setError={this.setError} />}
             />
             <Route
               path="/users/signup"
-              render={props => (
-                <Signup
-                  {...props}
-                  message={this.state.error}
-                  setError={this.setError}
-                />
-              )}
+              render={props => <Signup {...props} setError={this.setError} />}
             />
             <Route
               path="/all"

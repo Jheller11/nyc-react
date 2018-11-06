@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1em;
-  background-color: rgb(10, 30, 30);
+  background-color: inherit;
 }
 
 .new-link {
