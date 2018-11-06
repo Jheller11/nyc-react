@@ -2,4 +2,10 @@ footer {
   border-top: 1px solid gray;
   padding: 1em;
   margin-top: 1em;
+  font-size: 80%;
+}
+
+a:hover {
+  color: gold;
+  border-bottom: 1px solid gold;
 }
