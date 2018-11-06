@@ -20,6 +20,7 @@ class App extends Component {
     }
 
     this.setError = this.setError.bind(this)
+    this.setItems = this.setItems.bind(this)
   }
   // fetch all items.
   componentDidMount() {
@@ -39,6 +40,12 @@ class App extends Component {
   setError(err) {
     this.setState({
       error: err
+    })
+  }
+
+  setItems(items) {
+    this.setState({
+      items: items
     })
   }
 
@@ -72,7 +79,16 @@ class App extends Component {
               path="/all"
               render={props => <List {...props} items={this.state.items} />}
             />
-            <Route path="/new" render={props => <NewItemForm {...props} />} />
+            <Route
+              path="/new"
+              render={props => (
+                <NewItemForm
+                  {...props}
+                  setError={this.setError}
+                  setItems={this.setItems}
+                />
+              )}
+            />
             <Route exact path="/" render={props => <Home {...props} />} />
             <Route path="*" component={NoMatch} />
           </Switch>

@@ -35,7 +35,12 @@ class NewItemForm extends Component {
         addedBy: 'Jeff'
       })
       .then(res => {
-        console.log(res)
+        if (res.status === 500) {
+          this.props.setError(res.data)
+        } else {
+          this.props.setItems(res.data)
+          this.props.history.push('/all')
+        }
       })
       .catch(err => {
         console.log(err)
