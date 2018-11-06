@@ -7,6 +7,7 @@ import Signup from './components/Signup'
 import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import NewItemForm from './components/NewItemForm'
 import axios from 'axios'
 
 class App extends Component {
@@ -71,6 +72,7 @@ class App extends Component {
               path="/all"
               render={props => <List {...props} items={this.state.items} />}
             />
+            <Route path="/new" render={props => <NewItemForm {...props} />} />
             <Route exact path="/" render={props => <Home {...props} />} />
             <Route path="*" component={NoMatch} />
           </Switch>

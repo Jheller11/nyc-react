@@ -5,3 +5,9 @@
   padding: 1em;
   background-color: rgb(10, 30, 30);
 }
+
+.new-link {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}

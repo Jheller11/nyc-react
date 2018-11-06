@@ -37,26 +37,43 @@ class NewItemForm extends Component {
 
   render() {
     return (
-      <div>
-        <form>
+      <div className="login-signup">
+        <form onSubmit={this.handleSubmit}>
           <Input
-            name={'email'}
-            label={'Email'}
+            name={'name'}
+            label={'Name'}
             handleChange={this.handleChange}
             type={'text'}
           />
           <Input
-            name={'email'}
-            label={'Email'}
+            name={'location'}
+            label={'Address'}
             handleChange={this.handleChange}
             type={'text'}
           />
           <Input
-            name={'email'}
-            label={'Email'}
+            name={'link'}
+            label={'URL'}
             handleChange={this.handleChange}
             type={'text'}
           />
+          <div className="form-group">
+            <label name="type">Type:</label>
+            <select type="select">
+              <option value="restaurant">Restaurant</option>
+              <option value="park">Park</option>
+              <option value="show">Show</option>
+              <option value="activity">Activity</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label name="private">Public?:</label>
+            <select type="select">
+              <option value="false">Public</option>
+              <option value="true">Private</option>
+            </select>
+          </div>
+          <input type="submit" value="Create +" className="button" />
         </form>
       </div>
     )
@@ -64,3 +81,5 @@ class NewItemForm extends Component {
 }
 
 export default NewItemForm
+
+// needs: Name, location, addedBy(current user), link, type, private?

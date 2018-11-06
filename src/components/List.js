@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import ListItem from './ListItem'
 import ListController from './ListController'
 import '../styles/List.css'
@@ -45,6 +46,9 @@ class List extends Component {
 
     return (
       <div className="list-container">
+        <div className="new-link">
+          <Link to="/new">+ Add New Item</Link>
+        </div>
         <ListController />
         <div className="list">{list()}</div>
       </div>
