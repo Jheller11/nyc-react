@@ -21,6 +21,7 @@ class List extends Component {
             return (
               <ListItem
                 deleteItem={this.props.deleteItem}
+                changeStatus={this.props.changeStatus}
                 key={i}
                 data={item}
               />
@@ -36,6 +37,7 @@ class List extends Component {
               return (
                 <ListItem
                   deleteItem={this.props.deleteItem}
+                  changeStatus={this.props.changeStatus}
                   key={i}
                   data={item}
                 />
@@ -51,6 +53,7 @@ class List extends Component {
               return (
                 <ListItem
                   deleteItem={this.props.deleteItem}
+                  changeStatus={this.props.changeStatus}
                   key={i}
                   data={item}
                 />

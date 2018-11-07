@@ -33,9 +33,12 @@ const ListItem = props => {
         <button>
           <i className="fa fa-map-marker fa-lg" /> Map
         </button>
-        <button>
-          <i className="fa fa-check fa-lg" /> Change Status
-        </button>
+        {props.data.completed ? null : (
+          <button name={props.data._id} onClick={props.changeStatus}>
+            <i className="fa fa-check fa-lg" /> Mark Complete
+          </button>
+        )}
+
         <button>
           <i className="fa fa-pencil-square-o fa-lg" /> Edit
         </button>

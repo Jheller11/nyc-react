@@ -23,6 +23,7 @@ class App extends Component {
     this.setError = this.setError.bind(this)
     this.setItems = this.setItems.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
+    this.changeStatus = this.changeStatus.bind(this)
   }
   // fetch all items.
   componentDidMount() {
@@ -68,6 +69,23 @@ class App extends Component {
       })
   }
 
+  changeStatus(e) {
+    axios
+      .put(`http://localhost:3001/items/${e.target.name}`, {
+        completed: true
+      })
+      .then(res => {
+        if (res.status === 500) {
+          this.setError(res.data)
+        } else {
+          this.setItems(res.data)
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   render() {
     return (
       <div className="App">
@@ -90,6 +108,7 @@ class App extends Component {
                   {...props}
                   items={this.state.items}
                   deleteItem={this.deleteItem}
+                  changeStatus={this.changeStatus}
                 />
               )}
             />
