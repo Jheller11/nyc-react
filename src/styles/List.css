@@ -11,3 +11,9 @@
   justify-content: center;
   padding: 1em;
 }
+
+.add-new {
+  padding: 0.2em;
+  color: whitesmoke;
+  border-bottom: 1px solid rgb(20, 20, 20);
+}

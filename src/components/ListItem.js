@@ -39,7 +39,7 @@ const ListItem = props => {
         <button>
           <i className="fa fa-pencil-square-o fa-lg" /> Edit
         </button>
-        <button>
+        <button name={props.data._id} onClick={props.deleteItem}>
           <i className="fa fa-trash-o fa-lg" /> Delete
         </button>
       </div>

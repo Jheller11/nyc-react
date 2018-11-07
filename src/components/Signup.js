@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Input from './Input'
-import Error from './Error'
 import axios from 'axios'
 import '../styles/Login&Signup.css'
 

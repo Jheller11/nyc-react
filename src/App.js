@@ -22,6 +22,7 @@ class App extends Component {
 
     this.setError = this.setError.bind(this)
     this.setItems = this.setItems.bind(this)
+    this.deleteItem = this.deleteItem.bind(this)
   }
   // fetch all items.
   componentDidMount() {
@@ -44,10 +45,27 @@ class App extends Component {
     })
   }
 
+  // update list when new list received from server
   setItems(items) {
     this.setState({
       items: items
     })
+  }
+
+  // delete an item, receive new list from server
+  deleteItem(e) {
+    axios
+      .delete(`http://localhost:3001/items/${e.target.name}`)
+      .then(res => {
+        if (res.status === 500) {
+          this.setError(res.data)
+        } else {
+          this.setItems(res.data)
+        }
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {
@@ -67,7 +85,13 @@ class App extends Component {
             />
             <Route
               path="/all"
-              render={props => <List {...props} items={this.state.items} />}
+              render={props => (
+                <List
+                  {...props}
+                  items={this.state.items}
+                  deleteItem={this.deleteItem}
+                />
+              )}
             />
             <Route
               path="/new"

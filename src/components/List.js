@@ -18,7 +18,13 @@ class List extends Component {
       switch (this.state.view) {
         case 'all':
           let items = this.props.items.map((item, i) => {
-            return <ListItem key={i} data={item} />
+            return (
+              <ListItem
+                deleteItem={this.props.deleteItem}
+                key={i}
+                data={item}
+              />
+            )
           })
           return items
         case 'complete':
@@ -27,7 +33,13 @@ class List extends Component {
               return item.completed
             })
             .map((item, i) => {
-              return <ListItem key={i} data={item} />
+              return (
+                <ListItem
+                  deleteItem={this.props.deleteItem}
+                  key={i}
+                  data={item}
+                />
+              )
             })
           return items
         case 'incomplete':
@@ -36,7 +48,13 @@ class List extends Component {
               return !item.completed
             })
             .map((item, i) => {
-              return <ListItem key={i} data={item} />
+              return (
+                <ListItem
+                  deleteItem={this.props.deleteItem}
+                  key={i}
+                  data={item}
+                />
+              )
             })
           return items
         default:
@@ -47,7 +65,9 @@ class List extends Component {
     return (
       <div className="list-container">
         <div className="new-link">
-          <Link to="/new">+ Add New Item</Link>
+          <Link to="/new" className="add-new">
+            + Add New Item
+          </Link>
         </div>
         <ListController />
         <div className="list">{list()}</div>
