@@ -4,8 +4,8 @@ import axios from 'axios'
 import '../styles/Login&Signup.css'
 
 class Login extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {}
 
     this.handleChange = this.handleChange.bind(this)
@@ -29,6 +29,12 @@ class Login extends Component {
       })
       .then(res => {
         console.log(res)
+        if (res.status === 200) {
+          this.props.setUser(res.data)
+          this.props.history.push('/all')
+        } else if (res.status === 201) {
+          this.props.setError(res.data.message)
+        }
       })
       .catch(err => {
         console.log(err)

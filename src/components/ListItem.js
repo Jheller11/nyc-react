@@ -26,6 +26,7 @@ const ListItem = props => {
           <i className={icons[props.data.type]} />
         </div>
       </div>
+      <div className="date">Created: {d.toLocaleDateString()}</div>
       <div className="buttons">
         <button>
           <i className="fa fa-heart-o fa-lg" /> {props.data.likes.length}
@@ -51,13 +52,3 @@ const ListItem = props => {
 }
 
 export default ListItem
-
-/* <div>{props.data.name}</div>
-      <div>{props.data.createdAt}</div>
-      <div>{props.data._id}</div>
-      <div>{props.data.likes.length}</div>
-      <div>{props.data.location}</div>
-      <div>{props.data.addedBy}</div>
-      <div>{props.data.link}</div>
-      <div>{props.data.type}</div>
-      <div>{props.data.private ? 'private' : 'public'}</div> */

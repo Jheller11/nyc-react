@@ -24,18 +24,20 @@ class App extends Component {
     this.setItems = this.setItems.bind(this)
     this.deleteItem = this.deleteItem.bind(this)
     this.changeStatus = this.changeStatus.bind(this)
+    this.setUser = this.setUser.bind(this)
   }
   // fetch all items.
   componentDidMount() {
     axios
       .get('http://localhost:3001/items')
       .then(res => {
+        console.log(res)
         this.setState({
           items: res.data
         })
       })
       .catch(err => {
-        console.log(err)
+        this.setError('You must be logged in to view items.')
       })
   }
 
@@ -50,6 +52,14 @@ class App extends Component {
   setItems(items) {
     this.setState({
       items: items
+    })
+  }
+
+  // update list when new list received from server
+  setUser(data) {
+    this.setState({
+      user: data,
+      isLoggedIn: true
     })
   }
 
@@ -95,7 +105,13 @@ class App extends Component {
           <Switch>
             <Route
               path="/users/login"
-              render={props => <Login {...props} setError={this.setError} />}
+              render={props => (
+                <Login
+                  {...props}
+                  setError={this.setError}
+                  setUser={this.setUser}
+                />
+              )}
             />
             <Route
               path="/users/signup"
